@@ -6,7 +6,7 @@ sh /home/simon/.config/dunst/dunst.sh &
 
 nitrogen --restore 
 # Polybar
-sh /home/simon/.config/polybar/dracula/init.sh &
+sh /home/simon/.config/polybar/init.sh &
 # Compositor
 # sh /home/simon/.config/compton.sh &
 # pkill picom; picom --no-use-damage &
