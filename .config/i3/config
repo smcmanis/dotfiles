@@ -7,9 +7,8 @@
 #                                                                                              #
 ################################################################################################
 
-# Mod Key
-set $mod Mod4
-# set $mod Mod1
+# Mod Key (Mod1 = Alt, Mod4 = Super/Windows)
+set $mod Mod1 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
