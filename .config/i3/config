@@ -31,32 +31,43 @@ focus_follows_mouse yes
 focus_wrapping no
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+apostrophe kill
 
 # start rofi (dmenu program launcher alternative)
-bindsym $mod+d exec rofi -show drun -show-icons -theme solarised-dracula.rasi  
+bindsym $mod+e exec rofi -show drun -show-icons -theme solarised-dracula.rasi  
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+h focus left
+bindsym $mod+t focus down
+bindsym $mod+n focus up
+bindsym $mod+s focus right
+
 # move focused window
 bindsym $mod+Shift+Left move left 
 bindsym $mod+Shift+Down move down 
 bindsym $mod+Shift+Up move up 
-bindsym $mod+Shift+Right move right 
+bindsym $mod+Shift+Right move right
 
-bindsym $mod+h split h
-bindsym $mod+v split v
+bindsym $mod+Shift+h move left 
+bindsym $mod+Shift+t move down 
+bindsym $mod+Shift+n move up 
+bindsym $mod+Shift+s move right 
+
+
+bindsym $mod+d split h
+bindsym $mod+k split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+u fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+o layout stacking
+bindsym $mod+comma layout tabbed
+bindsym $mod+period layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -110,7 +121,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+. exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize"
@@ -136,8 +147,8 @@ bindsym $mod+r mode "resize"
  
 for_window [class=".*"] border pixel 3
 
-bindsym $mod+Ctrl+Shift+b border pixel 3
-bindsym $mod+Ctrl+b border pixel 0
+bindsym $mod+Shift+b border pixel 3
+bindsym $mod+b border pixel 0
 
 gaps inner 0
 gaps outer 0
