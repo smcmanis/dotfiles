@@ -73,7 +73,7 @@ HIST_STAMPS="%d.%m.%y %T"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow pipenv colored-man-pages sudo colorize alias-finder taskwarrior )
+plugins=(git git-flow pipenv colored-man-pages sudo colorize alias-finder  )
 
 
 source $ZSH/oh-my-zsh.sh
