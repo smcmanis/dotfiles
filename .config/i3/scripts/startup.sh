@@ -4,12 +4,14 @@
 # Notifications
 sh /home/simon/.config/dunst/dunst.sh &
 
-nitrogen --restore 
+# Set wallpaper
+feh --bg-fill  --randomize ~/Pictures/walls --bg-fill --randomize ~/Pictures/walls
+
 # Polybar
 sh /home/simon/.config/polybar/init.sh &
 # Compositor
-# sh /home/simon/.config/compton.sh &
 # pkill picom; picom --no-use-damage &
+# sh /home/simon/.config/compton.sh &
 
 xmousepasteblock &
 
