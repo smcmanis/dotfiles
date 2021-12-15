@@ -12,22 +12,26 @@
 # Mod Key (Mod1 = Alt, Mod4 = Super/Windows)
 set $mod Mod4 
 
-# Window title font
-font pango:monospace 8
+# Remap caps-lock to cntrl+escape
+# exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
+# exec --no-startup-id xcape -e 'Caps_Lock=Escape'
+
+# Window title font (doesn't matter since i don't use window titles)
+# font pango:monospace 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Focus preferences 
 focus_follows_mouse yes
-focus_wrapping no
+focus_wrapping yes
 
 ########
 # Process keybindings
 #######
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 
 # Restart i3 inplace 
 bindsym $mod+Shift+r restart
@@ -41,40 +45,39 @@ bindsym $mod+Shift+r restart
 # Navigation
 #######
 
-# Switch focused window
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+set $left h
+set $right l
+set $up k
+set $down j
 
-bindsym $mod+h focus left
-bindsym $mod+t focus down
-bindsym $mod+n focus up
-bindsym $mod+s focus right
+# Switch focused window
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # Move focused window
 set $dx 100 px
 set $dy 50px
-bindsym $mod+Shift+Left move left $dx
-bindsym $mod+Shift+Down move down $dy
-bindsym $mod+Shift+Up move up $dy
-bindsym $mod+Shift+Right move right $dx
 
-bindsym $mod+Shift+h move left  $dx
-bindsym $mod+Shift+t move down  $dy
-bindsym $mod+Shift+n move up $dy 
-bindsym $mod+Shift+s move right $dx
+bindsym $mod+Shift+$left move left  $dx
+bindsym $mod+Shift+$down move down  $dy
+bindsym $mod+Shift+$up move up $dy 
+bindsym $mod+Shift+$right move right $dx
 
 # Orientation of next window split 
-bindsym $mod+d split h
-bindsym $mod+k split v
+bindsym $mod+backslash split h
+bindsym $mod+bar split h
+bindsym $mod+semicolon split v
+bindsym $mod+quotedb1 split v
+bindsym $mod+minus split v
 
 #######
 # Container control
 #######
 
 # Kill focused container
-bindsym $mod+Shift+apostrophe kill
+bindsym $mod+Shift+semicolon kill
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+u fullscreen toggle
@@ -112,10 +115,10 @@ bindsym $mod+minus scratchpad show
 
 mode "resize"
 {
-    bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym $left resize shrink width 5 px or 5 ppt
+        bindsym $up resize grow height 5 px or 5 ppt
+        bindsym $down resize shrink height 5 px or 5 ppt
+        bindsym $right resize grow width 5 px or 5 ppt
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -182,8 +185,8 @@ workspace 10 output $secondary $primary
 ########
 
 # Start a terminal
-bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec kitty --class kitty-urgent
+bindsym $mod+t exec kitty
+bindsym $mod+Shift+t exec kitty --class kitty-urgent
 for_window [class="kitty-urgent"] floating enable
 
 # Exit i3 (logs you out of your X session)
@@ -218,8 +221,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight - 10
 ########
 
 # Gap size
-gaps inner 2
-gaps outer 10
+# gaps inner 2
+# gaps outer 10
 
 # Default border size
 for_window [class=".*"] border pixel 1
