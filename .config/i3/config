@@ -12,9 +12,10 @@
 # Mod Key (Mod1 = Alt, Mod4 = Super/Windows)
 set $mod Mod4 
 
-# Remap caps-lock to cntrl+escape
-# exec --no-startup-id setxkbmap -option 'caps:ctrl_modifier'
-# exec --no-startup-id xcape -e 'Caps_Lock=Escape'
+# Remap caps-lock to backspace
+exec_always --no-startup-id setxkbmap -layout us -variant dvorak
+exec_always --no-startup-id setxkbmap -option "clear lock"
+exec_always --no-startup-id setxkbmap -option "caps:backspace"
 
 # Window title font (doesn't matter since i don't use window titles)
 # font pango:monospace 8
@@ -66,29 +67,26 @@ bindsym $mod+Shift+$up move up $dy
 bindsym $mod+Shift+$right move right $dx
 
 # Orientation of next window split 
-bindsym $mod+backslash split h
-bindsym $mod+bar split h
-bindsym $mod+semicolon split v
-bindsym $mod+quotedb1 split v
-bindsym $mod+minus split v
+bindsym $mod+apostrophe split h
+bindsym $mod+bar split v
 
 #######
 # Container control
 #######
 
 # Kill focused container
-bindsym $mod+Shift+semicolon kill
+bindsym $mod+Shift+d kill
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+u fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+o layout stacking
-bindsym $mod+comma layout tabbed
-bindsym $mod+period layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # Change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -116,8 +114,8 @@ bindsym $mod+minus scratchpad show
 mode "resize"
 {
         bindsym $left resize shrink width 5 px or 5 ppt
-        bindsym $up resize grow height 5 px or 5 ppt
-        bindsym $down resize shrink height 5 px or 5 ppt
+        bindsym $down resize grow height 5 px or 5 ppt
+        bindsym $up resize shrink height 5 px or 5 ppt
         bindsym $right resize grow width 5 px or 5 ppt
 
         bindsym Return mode "default"
@@ -131,7 +129,7 @@ bindsym $mod+r mode "resize"
 for_window [floating] resize set 800 1030
 
 # Set floating window size to ~half screen
-bindsym $mod+Shift+d [floating] resize set 1200 1300
+# bindsym $mod+Shift+d [floating] resize set 1200 1300
 
 # Make floating dialogs small
 for_window [window_type="dialog"] resize set 400 300
@@ -190,10 +188,10 @@ bindsym $mod+Shift+t exec kitty --class kitty-urgent
 for_window [class="kitty-urgent"] floating enable
 
 # Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Start rofi (dmenu program launcher alternative)
-bindsym $mod+e exec rofi -show drun -theme arthur.rasi  
+bindsym $mod+d exec rofi -show drun -theme arthur.rasi  
 
 # Lock screen
 bindsym $mod+x exec betterlockscreen -l dimblur
