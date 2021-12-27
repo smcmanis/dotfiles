@@ -14,74 +14,78 @@ else
       autocmd VimEnter * PlugInstall | source $MYVIMRC
     endif
 endif
-
-call plug#begin('~/.vim/plugged')
-
-
-" Nice colour styles
-" Plug 'jellybeans.vim'
-" Plug 'jnurmine/Zenburn'
-" Plug 'w0ng/vim-hybrid'
-" Plug '29decibel/codeschool-vim-theme'
-" Plug 'vim-scripts/twilight'
-" Plug 'jonathanfilip/vim-lucius'
-
-" Comment-out stuff
-Plug 'tpope/vim-commentary'
-
-" Automatic bracket completion
-Plug 'Raimondi/delimitMate'
-
-" Use release branch (Recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" NOTE, for language integrations, type these 
-" - python, :CocInstall coc-python
-" - latex, :CocInstall coc-vimtex
-" - html, :CocInstall coc-html
-" - css, :CocInstall coc-css
-" - json, :CocInstall coc-json
-" - colors, :CocInstall coc-highlight  previews colors
+if exists('g:vscode') 
+    " c
+else
+    call plug#begin('~/.vim/plugged')
 
 
-" Python PEP8 indentation
-Plug 'hynek/vim-python-pep8-indent'
-
-"""" Not installed yet!!!
-" File Browser and finder
-Plug 'kien/ctrlp.vim'
-Plug 'preservim/nerdtree'
-
-" Nicer buffer information display 
-Plug 'itchyny/lightline.vim'
-Plug 'mgee/lightline-bufferline'
-
-" List tags, object properties etc 
-" NOTE: needs exuberant-ctags packages
-" Plug 'majutsushi/tagbar'
-
-
-" Buffer Displays
-" Plug 'jeetsukumaran/vim-buffergator'
-
-" Git Integration
-Plug 'tpope/vim-fugitive'
-
-" Always highlight enclosing parentheses
-Plug 'Yggdroot/hiPairs'
-
-call plug#end()
+    " Nice colour styles
+    " Plug 'jellybeans.vim'
+    " Plug 'jnurmine/Zenburn'
+    " Plug 'w0ng/vim-hybrid'
+    " Plug '29decibel/codeschool-vim-theme'
+    " Plug 'vim-scripts/twilight'
+    " Plug 'jonathanfilip/vim-lucius'
+    
+    " Comment-out stuff
+    Plug 'tpope/vim-commentary'
+    
+    " Automatic bracket completion
+    Plug 'Raimondi/delimitMate'
+    
+    " Use release branch (Recommend)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    
+    " NOTE, for language integrations, type these 
+    " - python, :CocInstall coc-python
+    " - latex, :CocInstall coc-vimtex
+    " - html, :CocInstall coc-html
+    " - css, :CocInstall coc-css
+    " - json, :CocInstall coc-json
+    " - js, :CocInstall coc-tsserver
+    " - colors, :CocInstall coc-highlight  previews colors
+    
+    
+    " Python PEP8 indentation
+    Plug 'hynek/vim-python-pep8-indent'
+    
+    """" Not installed yet!!!
+    " File Browser and finder
+    Plug 'kien/ctrlp.vim'
+    Plug 'preservim/nerdtree'
+    
+    " Nicer buffer information display 
+    Plug 'itchyny/lightline.vim'
+    Plug 'mgee/lightline-bufferline'
+    
+    " List tags, object properties etc 
+    " NOTE: needs exuberant-ctags packages
+    " Plug 'majutsushi/tagbar'
+    
+    
+    " Buffer Displays
+    " Plug 'jeetsukumaran/vim-buffergator'
+    
+    " Git Integration
+    Plug 'tpope/vim-fugitive'
+    
+    " Always highlight enclosing parentheses
+    Plug 'Yggdroot/hiPairs'
+    
+    call plug#end()
+endif
 
 
 
 
 " Default Formatting and Indenting
 set autoindent
-set textwidth=100
-set tabstop=4
-set shiftwidth=4
+set textwidth=79
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set softtabstop=4
+set softtabstop=2
 set smarttab  " tab width determined by shiftwidth
 syntax on
 " set spell spelllang=en_au  " spelling always on, even in code comments  
@@ -224,8 +228,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "nmap <leader>rn <Plug>(coc-rename)
 
 "" Remap for format selected region
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 "augroup mygroup
 "  autocmd!
