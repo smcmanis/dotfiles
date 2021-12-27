@@ -53,7 +53,6 @@ ENABLE_CORRECTION="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -61,10 +60,6 @@ ENABLE_CORRECTION="true"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 HIST_STAMPS="%d.%m.%y %T"
-
-
-
-
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -73,7 +68,18 @@ HIST_STAMPS="%d.%m.%y %T"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow pipenv colored-man-pages sudo colorize alias-finder  )
+plugins=(
+    aliases # bunch of useful aliases
+    alias-finder # show aliases for inputted command
+    colored-man-pages  
+    colorize # based on file ext.
+    zsh-autosuggestions
+    zoxide
+    pipenv
+    git # git aliases
+    history # hs="history | grep", hsi="history | grep -i"
+    sudo # ESC toggles sudo
+)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -123,7 +129,7 @@ alias cat='ccat' # Fancy coloured output for cat
 alias less='cless' # Fancy coloured output for less
 
 # Switch keyboard layout
-alias asdf="setxkbmap dvorak"
+alias asdf="setxkbmap -layout us -variant dvorak && setxkbmap -option 'caps:backspace'"
 alias aoeu="setxkbmap us"
 
 # Dotfiles git management
@@ -147,5 +153,3 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Run neofetch on console startup
-neofetch --ascii_colors 4 4 --colors 10 1 7 6 6 8  
