@@ -160,3 +160,12 @@ export PATH="$PATH:/home/simon/Source/gc/tools/bin-dev" # added by gc/tools/bin/
 
 export PATH="$PATH:/home/simon/bin" 
 
+eval "$(mcfly init zsh)"
+
+alias ggraph="git log --graph --all --oneline --date-order"
+alias cd="z"
+alias ssh="kitty +kitten ssh"
+
+
+
+
