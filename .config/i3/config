@@ -47,9 +47,9 @@ bindsym $mod+Shift+r restart
 #######
 
 set $left h
-set $right l
-set $up k
-set $down j
+set $right s
+set $up t
+set $down n
 
 # Switch focused window
 bindsym $mod+$left focus left
@@ -78,14 +78,14 @@ bindsym $mod+bar split v
 bindsym $mod+Shift+d kill
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking # never use this
+bindsym $mod+comma layout tabbed
 bindsym $mod+e layout toggle split
 
 # Change focus between tiling / floating windows
@@ -102,10 +102,10 @@ bindsym $mod+a focus parent
 ########
 
 # Make the currently focused window a scratchpad (*Note: toggle off by disabling floating)
-bindsym $mod+Shift+minus move scratchpad
+# bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+# bindsym $mod+minus scratchpad show
 
 ########
 # Resize
@@ -183,8 +183,8 @@ workspace 10 output $secondary $primary
 ########
 
 # Start a terminal
-bindsym $mod+t exec kitty
-bindsym $mod+Shift+t exec kitty --class kitty-urgent
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec kitty --class kitty-urgent
 for_window [class="kitty-urgent"] floating enable
 
 # Exit i3 (logs you out of your X session)
