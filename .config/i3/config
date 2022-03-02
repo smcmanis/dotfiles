@@ -75,7 +75,7 @@ bindsym $mod+bar split v
 #######
 
 # Kill focused container
-bindsym $mod+Shift+d kill
+bindsym $mod+Shift+q kill
 
 # Enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
