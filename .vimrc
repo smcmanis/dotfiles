@@ -1,5 +1,4 @@
 set nocompatible
-
 " auto-install plug if it doesn't exist
 if has('nvim')
     if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
@@ -63,9 +62,12 @@ else
     " NOTE: needs exuberant-ctags packages
     " Plug 'majutsushi/tagbar'
     
+    Plug 'tpope/vim-fugitive'
     
     " Buffer Displays
     " Plug 'jeetsukumaran/vim-buffergator'
+
+    Plug 'airblade/vim-gitgutter'
     
     " Git Integration
     Plug 'tpope/vim-fugitive'

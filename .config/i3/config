@@ -12,10 +12,6 @@
 # Mod Key (Mod1 = Alt, Mod4 = Super/Windows)
 set $mod Mod4 
 
-# Remap caps-lock to backspace
-exec_always --no-startup-id setxkbmap -layout us -variant dvorak
-exec_always --no-startup-id setxkbmap -option "clear lock"
-exec_always --no-startup-id setxkbmap -option "caps:backspace"
 
 # Window title font (doesn't matter since i don't use window titles)
 # font pango:monospace 8
@@ -47,9 +43,9 @@ bindsym $mod+Shift+r restart
 #######
 
 set $left h
-set $right l
-set $up k
-set $down j
+set $right s
+set $up t
+set $down n
 
 # Switch focused window
 bindsym $mod+$left focus left
@@ -75,17 +71,17 @@ bindsym $mod+bar split v
 #######
 
 # Kill focused container
-bindsym $mod+Shift+d kill
+bindsym $mod+Shift+q kill
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking # never use this
+bindsym $mod+comma layout tabbed
 bindsym $mod+e layout toggle split
 
 # Change focus between tiling / floating windows
@@ -132,7 +128,7 @@ for_window [floating] resize set 800 1030
 # bindsym $mod+Shift+d [floating] resize set 1200 1300
 
 # Make floating dialogs small
-for_window [window_type="dialog"] resize set 400 300
+# for_window [window_type="dialog"] resize set 400 300
 
 
 ########################################################
@@ -165,17 +161,20 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # Assign workspaces to specific monitors
 set $primary eDP1
-set $secondary HDMI1
-workspace 1 output $primary 
-workspace 2 output $primary
-workspace 3 output $secondary $primary
-workspace 4 output $secondary $primary
-workspace 5 output $secondary $primary
-workspace 6 output $secondary $primary
-workspace 7 output $secondary $primary
-workspace 8 output $secondary $primary
-workspace 9 output $secondary $primary
-workspace 10 output $secondary $primary
+set $secondary "DP1"
+set $tertiary "DP2"
+set $quaternary "HDMI1"
+
+workspace 1 output  $primary 
+workspace 2 output  $primary
+workspace 3 output  $secondary $tertiary $quaternary $primary
+workspace 4 output  $secondary $tertiary $quaternary $primary
+workspace 5 output  $secondary $tertiary $quaternary $primary
+workspace 6 output  $secondary $tertiary $quaternary $primary
+workspace 7 output  $secondary $tertiary $quaternary $primary
+workspace 8 output  $secondary $tertiary $quaternary $primary
+workspace 9 output  $secondary $tertiary $quaternary $primary
+workspace 10 output $secondary $tertiary $quaternary $primary
 
 
 ########################################################
@@ -183,8 +182,8 @@ workspace 10 output $secondary $primary
 ########
 
 # Start a terminal
-bindsym $mod+t exec kitty
-bindsym $mod+Shift+t exec kitty --class kitty-urgent
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec kitty --class kitty-urgent
 for_window [class="kitty-urgent"] floating enable
 
 # Exit i3 (logs you out of your X session)
@@ -242,3 +241,6 @@ client.background       #ffffff #ffffff #ffffff #ffffff
 exec_always ~/.config/i3/scripts/startup.sh
 
 
+# Remap caps-lock to backspace
+exec_always --no-startup-id setxkbmap -layout us -variant dvorak
+exec_always --no-startup-id setxkbmap -option "caps:backspace"

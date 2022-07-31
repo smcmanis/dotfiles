@@ -8,11 +8,13 @@ sh /home/simon/.config/dunst/dunst.sh &
 feh --bg-fill  --randomize ~/Pictures/walls --bg-fill --randomize ~/Pictures/walls
 
 # Polybar
+pkill polybar
 sh /home/simon/.config/polybar/init.sh &
 # Compositor
 # pkill picom; picom --no-use-damage &
 # sh /home/simon/.config/compton.sh &
 
+pkill xmousepastebloc
 xmousepasteblock &
 
 # sleep 3
