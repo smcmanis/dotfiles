@@ -10,7 +10,7 @@
 #######
 
 # Mod Key (Mod1 = Alt, Mod4 = Super/Windows)
-set $mod Mod1 
+set $mod Mod4 
 
 
 # Window title font (doesn't matter since i don't use window titles)
@@ -128,7 +128,7 @@ for_window [floating] resize set 800 1030
 # bindsym $mod+Shift+d [floating] resize set 1200 1300
 
 # Make floating dialogs small
-for_window [window_type="dialog"] resize set 400 300
+# for_window [window_type="dialog"] resize set 400 300
 
 
 ########################################################
@@ -240,7 +240,6 @@ client.background       #ffffff #ffffff #ffffff #ffffff
 
 exec_always ~/.config/i3/scripts/startup.sh
 
-exec --no-startup-id /usr/lib/gnome-settings-daemon-localeexe
 
 # Remap caps-lock to backspace
 exec_always --no-startup-id setxkbmap -layout us -variant dvorak
