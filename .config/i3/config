@@ -197,6 +197,7 @@ bindsym $mod+x exec betterlockscreen -l dimblur
 
 # Screenshot
 bindsym Print --release exec --no-startup-id import ~/Pictures/screenshots/$(date '+%d-%m-%Y_%H-%M-%S').png
+bindsym Ctrl+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Media player controls
 bindsym XF86AudioPlay exec cmus-remote -u
