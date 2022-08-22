@@ -7,23 +7,14 @@ sh /home/simon/.config/dunst/dunst.sh &
 # Set wallpaper
 feh --bg-fill  --randomize ~/Pictures/walls --bg-fill --randomize ~/Pictures/walls
 
-# Polybar
-pkill polybar
-sh /home/simon/.config/polybar/init.sh &
+# set external display
+xrandr --output HDMI1 --auto --right-of eDP1 
+xrandr --output DP1 --auto --left-of eDP1 
+
 # Compositor
 # pkill picom; picom --no-use-damage &
 # sh /home/simon/.config/compton.sh &
 
-pkill xmousepastebloc
-xmousepasteblock &
+pkill xmousepasteblock && xmousepasteblock &
 
-# sleep 3
-# Launch workspace 1 - Home
-# i3-msg 'workspace  ; append_layout ~/.config/i3/workspace-1.json' 
-
-
-# kitty --class cmus --session ~/.config/kitty/autostart/cmus &
-# kitty --class gotop --session ~/.config/kitty/autostart/gotop &
-# kitty --class cava  --session ~/.config/kitty/autostart/cava &
-# kitty --class kitty 
 

@@ -240,6 +240,7 @@ client.background       #ffffff #ffffff #ffffff #ffffff
 ########
 
 exec_always ~/.config/i3/scripts/startup.sh
+exec_always ~/.config/polybar/init.sh &
 
 
 # Remap caps-lock to backspace
