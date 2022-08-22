@@ -42,10 +42,10 @@ bindsym $mod+Shift+r restart
 # Navigation
 #######
 
-set $left h
-set $right s
-set $up t
-set $down n
+set $left Left
+set $right Right
+set $up Up
+set $down Down
 
 # Switch focused window
 bindsym $mod+$left focus left
