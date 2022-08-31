@@ -15,3 +15,6 @@ xrandr --output DP1 --auto --left-of eDP1
 pkill xmousepasteblock && xmousepasteblock &
 
 
+# Remap caps-lock to backspace
+setxkbmap -layout us -variant dvorak
+setxkbmap -option "caps:backspace"

@@ -247,6 +247,3 @@ exec_always ~/.config/i3/scripts/startup.sh
 exec_always ~/.config/polybar/init.sh &
 
 
-# Remap caps-lock to backspace
-exec_always --no-startup-id setxkbmap -layout us -variant dvorak
-exec_always --no-startup-id setxkbmap -option "caps:backspace"
