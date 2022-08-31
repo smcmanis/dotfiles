@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+echo "hello"
+echo "$@"
+for item in "${@:1}"; do
+  mv $item ~/.local/share/Trash/files/
+done

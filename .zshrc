@@ -156,8 +156,6 @@ compinit
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-export PATH="$PATH:/home/simon/Source/gc/tools/bin-dev" # added by gc/tools/bin/add-bin-dev-to-path
-. ~/Source/gc/tools/bash_completion/gc-dev-env
 
 export PATH="$PATH:/home/simon/bin" 
 
@@ -166,6 +164,7 @@ eval "$(mcfly init zsh)"
 alias ggraph="git log --graph --all --oneline --date-order"
 alias cd="z"
 alias ssh="kitty +kitten ssh"
+alias trash="/usr/bin/trash"
 
 
-
+neofetch 
