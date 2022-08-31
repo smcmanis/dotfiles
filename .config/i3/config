@@ -28,7 +28,7 @@ focus_wrapping yes
 #######
 
 # Reload the configuration file
-# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload
 
 # Restart i3 inplace 
 bindsym $mod+Shift+r restart
@@ -238,6 +238,9 @@ client.background       #ffffff #ffffff #ffffff #ffffff
 ########################################################
 # Startup scripts
 ########
+
+# Compositor
+exec_always ~/.confi/picom/init.sh
 
 exec_always ~/.config/i3/scripts/startup.sh
 exec_always ~/.config/polybar/init.sh &

@@ -11,9 +11,6 @@ feh --bg-fill  --randomize ~/Pictures/walls --bg-fill --randomize ~/Pictures/wal
 xrandr --output HDMI1 --auto --right-of eDP1 
 xrandr --output DP1 --auto --left-of eDP1 
 
-# Compositor
-# pkill picom; picom --no-use-damage &
-# sh /home/simon/.config/compton.sh &
 
 pkill xmousepasteblock && xmousepasteblock &
 
