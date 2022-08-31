@@ -63,8 +63,8 @@ bindsym $mod+Shift+$up move up $dy
 bindsym $mod+Shift+$right move right $dx
 
 # Orientation of next window split 
-bindsym $mod+apostrophe split h
-bindsym $mod+bar split v
+bindsym $mod+h split h
+bindsym $mod+v split v
 
 #######
 # Container control
@@ -123,6 +123,7 @@ bindsym $mod+r mode "resize"
 
 # Default floating window size
 for_window [floating] resize set 800 1030
+bindsym $mod+Return [floating] resize set 800 500
 
 # Set floating window size to ~half screen
 # bindsym $mod+Shift+d [floating] resize set 1200 1300
@@ -182,8 +183,8 @@ workspace 10 output $secondary $tertiary $quaternary $primary
 ########
 
 # Start a terminal
-bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec kitty --class kitty-urgent
+bindsym $mod+t exec kitty
+bindsym $mod+Shift+t exec kitty --class kitty-urgent
 for_window [class="kitty-urgent"] floating enable
 
 # Exit i3 (logs you out of your X session)
@@ -223,7 +224,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight - 10
 # gaps outer 10
 
 # Default border size
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # Classes (border background text indicator
 client.focused #4c7899 #fa284b #ffffff #fa284b
