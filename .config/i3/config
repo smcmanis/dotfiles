@@ -241,7 +241,7 @@ client.background       #ffffff #ffffff #ffffff #ffffff
 ########
 
 # Compositor
-exec_always ~/.confi/picom/init.sh
+exec_always ~/.config/picom/init.sh
 
 exec_always ~/.config/i3/scripts/startup.sh
 exec_always ~/.config/polybar/init.sh &
