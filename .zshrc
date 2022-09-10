@@ -153,10 +153,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-
 export PATH="$PATH:/home/simon/bin" 
 
 eval "$(mcfly init zsh)"
