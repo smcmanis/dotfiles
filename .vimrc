@@ -83,7 +83,6 @@ endif
 
 " Default Formatting and Indenting
 set autoindent
-set textwidth=79
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -91,8 +90,6 @@ set softtabstop=2
 set smarttab  " tab width determined by shiftwidth
 syntax on
 " set spell spelllang=en_au  " spelling always on, even in code comments  
-set foldmethod=indent
-set foldlevel=99
 
 
 
@@ -107,7 +104,7 @@ set showtabline=2
 " colorscheme hybrid
 "set t_Co=256        " Approx GUI colour in terminals
 set laststatus=2
-set cursorline
+" set cursorline
 
 let mapleader=","
 
